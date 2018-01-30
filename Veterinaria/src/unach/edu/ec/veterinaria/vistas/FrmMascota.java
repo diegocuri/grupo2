@@ -93,7 +93,7 @@ public class FrmMascota extends JInternalFrame{
             IMascota mascotaDao = new MascotaImpl();
             
             if(mascotaDao.insertar(mascota)>0){
-                JOptionPane.showMessageDialog(this,"Registro Correcto!!",
+                JOptionPane.showMessageDialog(this," Mascota Registrada!!",
                         "Transacción correcta",JOptionPane.INFORMATION_MESSAGE);
             }else {
                 JOptionPane.showMessageDialog(this,"Error de Guardado!!",
