@@ -5,6 +5,13 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
+import java.util.*;
+
+import unach.edu.ec.veterinaria.dao.*;
+import unach.edu.ec.veterinaria.Entidades.*;
+import unach.edu.ec.veterinaria.impl.*;
+
+
 
 public class FrmMenuPrincipal extends JFrame {
 
@@ -89,69 +96,69 @@ public class FrmMenuPrincipal extends JFrame {
         mnMascota.addSeparator();
         mnMascota.add(mniListaMascota);
         
-        /*DOCENTE*/
-        mnDocente= new JMenu("DOCENTE");
-        mnDocente.setForeground(Color.BLACK);
-        mniNuevoDocente= new JMenuItem("NUEVO");
-             
-        mniNuevoDocente.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                mniNuevoDocenteActionPerformed(e);
-            }
-        });
-        
-        mniModificaDocente= new JMenuItem("MODIFICAR");
-        mniEliminaDocente= new JMenuItem("ELIMINAR");
-        mniBuscaDocente= new JMenuItem("BUSCAR");
-        mniListaDocente= new JMenuItem("LISTAR");
-        
-        mniListaDocente.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                mniListaDocenteActionPerformed(e);
-            }
-        });
-       
-        mnDocente.add(mniNuevoDocente);
-        mnDocente.add(mniModificaDocente);
-        mnDocente.add(mniEliminaDocente);
-        mnDocente.addSeparator();
-        mnDocente.add(mniBuscaDocente);
-        mnDocente.addSeparator();
-        mnDocente.add(mniListaDocente);
-       
-        
-        /*MATERIA*/
-        
-        mnMateria = new JMenu("MATERIA");
-        mnMateria.setForeground(Color.blue);
-        mniNuevaMateria = new JMenuItem("NUEVA");
-        mniBuscarMateria = new JMenuItem("BUSCAR");
-        mniEliminarMateria = new JMenuItem("ELIMINAR");
-        mniModificarMateria = new JMenuItem("MODIFICAR");
-        mniListarMateria = new JMenuItem("LISTAR");
-        
-        mnMateria.add(mniNuevaMateria);
-        mnMateria.add(mniModificarMateria);
-        mnMateria.add(mniEliminarMateria);
-        mnMateria.add(mniBuscaMascota);
-        mnMateria.add(mniListarMateria);
-        
-        mniNuevaMateria.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    mniNuevaMateriaActionPerformed(e);
-                } catch (Exception x) {System.out.println("ERROR"+x.getMessage());
-                }
-            }
-        });
+////        /*DOCENTE*/
+////        mnDocente= new JMenu("DOCENTE");
+////        mnDocente.setForeground(Color.BLACK);
+////        mniNuevoDocente= new JMenuItem("NUEVO");
+////             
+////        mniNuevoDocente.addActionListener(new ActionListener() {
+////            @Override
+////            public void actionPerformed(ActionEvent e) {
+////                mniNuevoDocenteActionPerformed(e);
+////            }
+////        });
+////        
+////        mniModificaDocente= new JMenuItem("MODIFICAR");
+////        mniEliminaDocente= new JMenuItem("ELIMINAR");
+////        mniBuscaDocente= new JMenuItem("BUSCAR");
+////        mniListaDocente= new JMenuItem("LISTAR");
+////        
+////        mniListaDocente.addActionListener(new ActionListener() {
+////            @Override
+////            public void actionPerformed(ActionEvent e) {
+////                mniListaDocenteActionPerformed(e);
+////            }
+////        });
+//       
+//        mnDocente.add(mniNuevoDocente);
+//        mnDocente.add(mniModificaDocente);
+//        mnDocente.add(mniEliminaDocente);
+//        mnDocente.addSeparator();
+//        mnDocente.add(mniBuscaDocente);
+//        mnDocente.addSeparator();
+//        mnDocente.add(mniListaDocente);
+//       
+//        
+//        /*MATERIA*/
+//        
+//        mnMateria = new JMenu("MATERIA");
+//        mnMateria.setForeground(Color.blue);
+//        mniNuevaMateria = new JMenuItem("NUEVA");
+//        mniBuscarMateria = new JMenuItem("BUSCAR");
+//        mniEliminarMateria = new JMenuItem("ELIMINAR");
+//        mniModificarMateria = new JMenuItem("MODIFICAR");
+//        mniListarMateria = new JMenuItem("LISTAR");
+//        
+//        mnMateria.add(mniNuevaMateria);
+//        mnMateria.add(mniModificarMateria);
+//        mnMateria.add(mniEliminarMateria);
+//        mnMateria.add(mniBuscaMascota);
+//        mnMateria.add(mniListarMateria);
+//        
+//        mniNuevaMateria.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                try {
+//                    mniNuevaMateriaActionPerformed(e);
+//                } catch (Exception x) {System.out.println("ERROR"+x.getMessage());
+//                }
+//            }
+//        });
         /*UBICAION DE BOTONES*/
         mnbPrincipal.add(mnInicio);
         mnbPrincipal.add(mnMascota);
-        mnbPrincipal.add(mnMateria);
-        mnbPrincipal.add(mnDocente);
+//        mnbPrincipal.add(mnMateria);
+//        mnbPrincipal.add(mnDocente);
         
         mnbPrincipal.setBackground(Color.lightGray);
         mnInicio.add(mniLogin);
@@ -172,30 +179,29 @@ public class FrmMenuPrincipal extends JFrame {
         dkpEscritorio.add(frm,BorderLayout.WEST);
         frm.setVisible(true);
     }
-        public void mniNuevaMateriaActionPerformed(ActionEvent e){
-        FmrMateria frm = new FmrMateria();
-        dkpEscritorio.add(frm,BorderLayout.SOUTH);
+//        public void mniNuevaMateriaActionPerformed(ActionEvent e){
+//        FmrMateria frm = new FmrMateria();
+//        dkpEscritorio.add(frm,BorderLayout.SOUTH);
         
-        frm.setVisible(true);
-    }
-       public void mniNuevoDocenteActionPerformed(ActionEvent e){
-        FmrDocente frm = new FmrDocente();
-        frm.setTitle("DOCENTE");
-        dkpEscritorio.add(frm,BorderLayout.SOUTH);
-        
-        frm.setVisible(true);
-    }
-        public void mniListaDocenteActionPerformed(ActionEvent e){
-        FrmDocenteLista frm = new FrmDocenteLista();
-        frm.setTitle("DOCENTES REGISTRADOS");
-        dkpEscritorio.add(frm,BorderLayout.WEST);
-      
-        frm.setVisible(true);
-    } 
+       // frm.setVisible(true);
+    //}
+//       public void mniNuevoDocenteActionPerformed(ActionEvent e){
+//        FmrDocente frm = new FmrDocente();
+//        frm.setTitle("DOCENTE");
+//        dkpEscritorio.add(frm,BorderLayout.SOUTH);
+//        
+//        frm.setVisible(true);
+//    }
+//        public void mniListaDocenteActionPerformed(ActionEvent e){
+//        FrmDocenteLista frm = new FrmDocenteLista();
+//        frm.setTitle("DOCENTES REGISTRADOS");
+//        dkpEscritorio.add(frm,BorderLayout.WEST);
+//      
+//        frm.setVisible(true);
+//    } 
     public void mniListaMascotaActionPerformed(ActionEvent e){
         FrmMascotaLista frm = new FrmMascotaLista();
         frm.setTitle("MASCOTAS REGISTRADOS");
-        dkpEscritorio.add(frm,BorderLayout.WEST);
       
         frm.setVisible(true);
     }       
