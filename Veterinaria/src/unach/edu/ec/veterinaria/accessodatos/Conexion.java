@@ -7,11 +7,12 @@ import java.util.List;
 public class Conexion {
 
     final String DRIVER = "org.postgresql.Driver";
-    final String URL = "jdbc:postgresql://172.30.3.204:5433/Veterinaria";
+    final String URL = "jdbc:postgresql://172.30.3.204:5433/Veterinaria [usr_academico on public]";
     final String USER = "usr_academico";
     final String PASS = "123456";
     Connection con = null;
 
+    
     public void conectar() {
         try {
             Class.forName(DRIVER);
