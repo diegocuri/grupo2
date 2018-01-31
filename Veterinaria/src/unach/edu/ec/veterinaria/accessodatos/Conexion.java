@@ -7,9 +7,9 @@ import java.util.List;
 public class Conexion {
 
     final String DRIVER = "org.postgresql.Driver";
-    final String URL = "jdbc:postgresql://localhost:5433/veterinaria";
-    final String USER = "mishell";
-    final String PASS = "123";
+    final String URL = "jdbc:postgresql://localhost:5432/Veterinaria";
+    final String USER = "usr_academico";
+    final String PASS = "123456";
     Connection con = null;
 
     
