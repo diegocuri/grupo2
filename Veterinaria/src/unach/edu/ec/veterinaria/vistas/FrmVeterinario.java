@@ -76,24 +76,14 @@ public class FrmVeterinario extends JInternalFrame{
         frmMenu.setVisible(true);
     }    
     public void btnAceptarActionListener(ActionEvent e){
+            try {
         IVeterinario veterinarioDao = new VeterinarioImpl();
         Veterinario veterinario = new Veterinario();
         veterinario.setCodigo(Integer.parseInt(txtCodigo.getText()));
         veterinario.setNombre(txtNombre.getText());
         
-        //DateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
-//        try {                        
-//            veterinario.setFecha_nac( formatoFecha.parse(txtFechaNac.getText()));
-//            veterinario.setFecha_ing( formatoFecha.parse(txtFechaIng.getText()));
-//        } catch (Exception ex) {
-//            JOptionPane.showMessageDialog(this,"Error en la fecha!!",
-//                "Transacción", JOptionPane.INFORMATION_MESSAGE);
-//        }
-//        veterinario.setTelefono(txtTelefono.getText());
-//        veterinario.setSexo(cmbSexo.getSelectedIndex() == 0 ? "m" : "f");          
-//        veterinario.setDireccion(txtDireccion.getText());      
-//        
-        try {
+     
+    
             if(veterinarioDao.insertar(veterinario)>0){
                 JOptionPane.showMessageDialog(this,"Guaradado correctamente!!",
                 "Transacción", JOptionPane.INFORMATION_MESSAGE);
