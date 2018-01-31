@@ -13,7 +13,7 @@ import javax.swing.*;
 /**
  *
  * @author FABRICIO CONSTANTE
- */
+ */ 
 public class FrmMascota extends JInternalFrame{
     JLabel lblTitulo1,lblTitulo2,lblTitulo3;
    
