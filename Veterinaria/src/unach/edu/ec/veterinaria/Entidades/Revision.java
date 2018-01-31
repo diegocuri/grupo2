@@ -2,7 +2,7 @@
 package unach.edu.ec.veterinaria.Entidades;
 
 public class Revision {
-    private String codigo;
+    private int codigo;
     private Mascota mascota;
     private Veterinario veterinario;
     private String descripcion;
@@ -10,18 +10,18 @@ public class Revision {
     public Revision() {
     }
 
-    public Revision(String codigo, Mascota mascota, Veterinario veterinario, String descripcion) {
+    public Revision(int codigo, Mascota mascota, Veterinario veterinario, String descripcion) {
         this.codigo = codigo;
         this.mascota = mascota;
         this.veterinario = veterinario;
         this.descripcion = descripcion;
     }
 
-    public String getCodigo() {
+    public int getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(String codigo) {
+    public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
 
