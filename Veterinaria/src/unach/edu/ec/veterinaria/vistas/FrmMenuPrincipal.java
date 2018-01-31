@@ -2,16 +2,16 @@ package unach.edu.ec.veterinaria.vistas;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import static java.awt.Frame.MAXIMIZED_BOTH;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 import java.util.*;
-
+import static javax.swing.JFrame.EXIT_ON_CLOSE;
 /**
  *
  * @author FABRICIO YAMBAY
- */
-
+ */ 
 public class FrmMenuPrincipal extends JFrame {
 
     JMenuBar mnbPrincipal;
@@ -154,7 +154,7 @@ public class FrmMenuPrincipal extends JFrame {
                 }
             }
         });
-        mniListaVeterinario.addActionListener(new ActionListener() {
+        mniListarVeterinario.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 mniListaVeterinarioActionPerformed(e);
