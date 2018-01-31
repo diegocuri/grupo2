@@ -37,7 +37,7 @@ public class FrmVeterinario extends JInternalFrame{
         pnlCentral.setLayout(new GridLayout(11, 2, 5, 5));
         pnlPie.setLayout(new GridLayout(1,2,5,5));
         
-        lblTitulo0 = new JLabel("Datos Veterinario");
+        lblTitulo0 = new JLabel(" Datos Veterinario");
         
         lblCodigo= new JLabel("Código:");
         lblNombre= new JLabel("Nombre:");

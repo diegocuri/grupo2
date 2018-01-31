@@ -10,6 +10,7 @@ import java.util.*;
 import unach.edu.ec.veterinaria.dao.*;
 import unach.edu.ec.veterinaria.Entidades.*;
 import unach.edu.ec.veterinaria.impl.*;
+import unach.edu.ec.veterinaria.vistas.*;
 
 
 
@@ -35,13 +36,14 @@ public class FrmMenuPrincipal extends JFrame {
     JMenuItem mniBuscaDocente;
     JMenuItem mniListaDocente;
     
-    /**MATERIA*/
-    JMenu mnMateria;
-    JMenuItem mniNuevaMateria;
-    JMenuItem mniModificarMateria;
-    JMenuItem mniEliminarMateria;
-    JMenuItem mniBuscarMateria;
-    JMenuItem mniListarMateria;
+    /**Veterinario*/
+    JMenu mnVeterinario;
+    JMenuItem mniVeterinario;
+    JMenuItem mniNuevoVeterinario;
+    JMenuItem mniModificarVeterinario;
+    JMenuItem mniEliminarVeterinario;
+    JMenuItem mniBuscarVeterinario;
+    JMenuItem mniListarVeterinario;
   
 
     public FrmMenuPrincipal() {
@@ -129,35 +131,43 @@ public class FrmMenuPrincipal extends JFrame {
 //        mnDocente.add(mniListaDocente);
 //       
 //        
-//        /*MATERIA*/
+//        /*Veterinario*/
 //        
-//        mnMateria = new JMenu("MATERIA");
-//        mnMateria.setForeground(Color.blue);
-//        mniNuevaMateria = new JMenuItem("NUEVA");
-//        mniBuscarMateria = new JMenuItem("BUSCAR");
-//        mniEliminarMateria = new JMenuItem("ELIMINAR");
-//        mniModificarMateria = new JMenuItem("MODIFICAR");
-//        mniListarMateria = new JMenuItem("LISTAR");
-//        
-//        mnMateria.add(mniNuevaMateria);
-//        mnMateria.add(mniModificarMateria);
-//        mnMateria.add(mniEliminarMateria);
-//        mnMateria.add(mniBuscaMascota);
-//        mnMateria.add(mniListarMateria);
-//        
-//        mniNuevaMateria.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                try {
-//                    mniNuevaMateriaActionPerformed(e);
-//                } catch (Exception x) {System.out.println("ERROR"+x.getMessage());
-//                }
-//            }
-//        });
+        mnVeterinario = new JMenu("MATERIA");
+        mnVeterinario.setForeground(Color.blue);
+        mniNuevoVeterinario = new JMenuItem("NUEVO");
+        mniBuscarVeterinario = new JMenuItem("BUSCAR");
+        mniEliminarVeterinario = new JMenuItem("ELIMINAR");
+        mniModificarVeterinario = new JMenuItem("MODIFICAR");
+        mniListarVeterinario = new JMenuItem("LISTAR");
+        
+        mnVeterinario.add(mniNuevoVeterinario);
+        mnVeterinario.add(mniModificarVeterinario);
+        mnVeterinario.add(mniEliminarVeterinario);
+        mnVeterinario.add(mniBuscarVeterinario);
+        mnVeterinario.add(mniListarVeterinario);
+        
+        mniNuevoVeterinario.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    mniNuevoVeterinarioActionPerformed(e);
+                } catch (Exception x) {System.out.println("ERROR"+x.getMessage());
+                }
+            }
+
+            private void mniNuevoVeterinarioActionPerformed(ActionEvent e) {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+          
+
+            
+        });
         /*UBICAION DE BOTONES*/
         mnbPrincipal.add(mnInicio);
         mnbPrincipal.add(mnMascota);
-//        mnbPrincipal.add(mnMateria);
+        mnbPrincipal.add(mnVeterinario);
 //        mnbPrincipal.add(mnDocente);
         
         mnbPrincipal.setBackground(Color.lightGray);
@@ -179,12 +189,12 @@ public class FrmMenuPrincipal extends JFrame {
         dkpEscritorio.add(frm,BorderLayout.WEST);
         frm.setVisible(true);
     }
-//        public void mniNuevaMateriaActionPerformed(ActionEvent e){
-//        FmrMateria frm = new FmrMateria();
-//        dkpEscritorio.add(frm,BorderLayout.SOUTH);
-        
-       // frm.setVisible(true);
-    //}
+//        public void mniNuevoVeterinarioPerformed(ActionEvent e){
+//        FmrVeterinario frm = new FmrVeterinario();
+//        dkpEscritorio.add(frm,BorderLayout. WEST);
+//        
+//        frm.setVisible(true);
+//    }
 //       public void mniNuevoDocenteActionPerformed(ActionEvent e){
 //        FmrDocente frm = new FmrDocente();
 //        frm.setTitle("DOCENTE");
@@ -212,5 +222,11 @@ public class FrmMenuPrincipal extends JFrame {
     public static void main(String[] args) {
         FrmMenuPrincipal frm = new FrmMenuPrincipal();
         frm.setVisible(true);
+    }
+
+    private static class FmrVeterinario {
+
+        public FmrVeterinario() {
+        }
     }
 }
