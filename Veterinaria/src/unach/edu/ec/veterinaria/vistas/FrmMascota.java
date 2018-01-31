@@ -3,13 +3,17 @@ package unach.edu.ec.veterinaria.vistas;
 import unach.edu.ec.veterinaria.Entidades.*;
 import unach.edu.ec.veterinaria.dao.*;
 import unach.edu.ec.veterinaria.impl.*;
+import unach.edu.ec.veterinaria.accessodatos.*;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
-
+/**
+ *
+ * @author FABRICIO CONSTANTE
+ */
 public class FrmMascota extends JInternalFrame{
     JLabel lblTitulo1,lblTitulo2,lblTitulo3;
    
@@ -82,28 +86,28 @@ public class FrmMascota extends JInternalFrame{
         frmMenu.setVisible(true);
     } 
     public void btnAceptarActionListener(ActionEvent e){
-        
-        try {
-            
+       try {
             Mascota mascota = new Mascota();
             mascota.setCodigo(Integer.parseInt(txtTitulo1.getText()));
             mascota.setNombre(txtTitulo2.getText());
-            mascota.setSexo(cmbSexo.getSelectedIndex()==1 ? "m" : "h");
+            mascota.setSexo(cmbSexo.getSelectedIndex()==1 ? "m" : "f");
             mascota.setRaza(txtTitulo3.getText());
             IMascota mascotaDao = new MascotaImpl();
             
             if(mascotaDao.insertar(mascota)>0){
-                JOptionPane.showMessageDialog(this," Mascota Registrada!!",
+                JOptionPane.showMessageDialog(this,"Registro Correcto!!",
                         "Transacción correcta",JOptionPane.INFORMATION_MESSAGE);
             }else {
                 JOptionPane.showMessageDialog(this,"Error de Guardado!!",
                 "ERROR", JOptionPane.ERROR_MESSAGE); 
             }
+            
+            
         } catch (Exception x) {
               JOptionPane.showMessageDialog(this,"Proceso incorrecto!!" + x.getMessage(),
                 "Transacción", JOptionPane.INFORMATION_MESSAGE);
             
         }
-
-    }
+      
+}
 }
