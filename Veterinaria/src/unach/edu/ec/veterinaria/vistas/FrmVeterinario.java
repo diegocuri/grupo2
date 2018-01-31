@@ -73,12 +73,15 @@ public class FrmVeterinario extends JInternalFrame{
     }
     public static void main(String[] args) {
         FrmVeterinario frmMenu= new FrmVeterinario();
+        
         frmMenu.setVisible(true);
+        
     }    
     public void btnAceptarActionListener(ActionEvent e){
             try {
         IVeterinario veterinarioDao = new VeterinarioImpl();
         Veterinario veterinario = new Veterinario();
+        
         veterinario.setCodigo(Integer.parseInt(txtCodigo.getText()));
         veterinario.setNombre(txtNombre.getText());
         
