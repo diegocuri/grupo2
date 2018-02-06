@@ -10,7 +10,7 @@ import java.util.*;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 /**
  *
- * @author FABRICIO CONSTANTE
+ * @
  */ 
 public class FrmMenuPrincipal extends JFrame {
 
@@ -112,6 +112,7 @@ public class FrmMenuPrincipal extends JFrame {
         mniEliminaRevision= new JMenuItem("ELIMINAR");
         mniBuscaRevision= new JMenuItem("BUSCAR");
         mniListaRevision= new JMenuItem("LISTAR");
+        
         
         mniListaRevision.addActionListener(new ActionListener() {
             @Override
